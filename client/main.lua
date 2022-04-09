@@ -387,7 +387,8 @@ function RunWorkThread()
                                         }, {}, {}, function() -- Done
                                             isWorking = false
                                             StopAnimTask(PlayerPedId(), "anim@gangops@facility@servers@", "hotwire", 1.0)
-                                            TriggerEvent('animations:client:EmoteCommandStart', {"box"})
+											ExecuteCommand('e box')
+                                            --TriggerEvent('animations:client:EmoteCommandStart', {"box"})
                                             hasBox = true
                                         end, function() -- Cancel
                                             isWorking = false
@@ -404,9 +405,10 @@ function RunWorkThread()
                                 DrawText3D(CurrentLocation.x, CurrentLocation.y, CurrentLocation.z, "~g~E~w~ - Deliver Products")
                                 if IsControlJustReleased(0, 38) then
                                     isWorking = true
-                                    TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+                                    ExecuteCommand('e c')
                                     Wait(500)
-                                    TriggerEvent('animations:client:EmoteCommandStart', {"bumbin"})
+									ExecuteCommand('e bumbin')
+                                    --TriggerEvent('animations:client:EmoteCommandStart', {"bumbin"})
                                     QBCore.Functions.Progressbar("work_dropbox", "Deliver Box Of Products", 2000, false, true, {
                                         disableMovement = true,
                                         disableCarMovement = true,
